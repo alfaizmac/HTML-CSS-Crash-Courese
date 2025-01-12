@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+}
+
+header {
+  background-color: #f63232;
+  padding: 20px;
+  text-align: center;
+
+  /*Position fixed mean it will always remain on the screen it will never move*/
+  position: fixed;
+  width: 100%;
+
+  /*to bring to front the container use z-index*/
+  z-index: 1;
+
+  /*to make it cover all the container put 0*/
+  top: 0;
+  left: 0;
+}
+
+header h1 {
+  color: white;
+  border: 8px solid white;
+  padding: 6px 12px;
+
+  /*the display inline-block is only target the content like text or image that why it has white space between the text and the border because we use padding kung wlang padding didikit sa text yung white boarder*/
+  display: inline-block;
+  border-radius: 36px;
+}
+
+/*Position Relative meaning you can put the absolute positioned element inside it*/
+.banner {
+  position: relative;
+}
+.banner img {
+  max-width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*Position absolute meaning you can put the position inside relative positions*/
+.banner .welcome {
+  background-color: #feb614;
+  color: white;
+  padding: 30px;
+  position: absolute;
+  top: 30%;
+  left: 0px;
+}
+
+.banner h2 {
+  font-size: 74px;
+}
+
+/* 1.3em meaning is times 1.3 x 74, the 74 came from the parent */
+.banner h2 span {
+  font-size: 1.12em;
+}
+
+nav {
+  background-color: #f4f4f4;
+  padding: 20px;
+
+  /*Sticky mean it will stay on top of the screen if the user scroll down but remember the header is fixed means it will display on top also so fixed the nav bar to the bottom of the header using top: 120px*/
+  position: sticky;
+  top: 105px;
+  background-color: #f4f4f4;
+}
+
+nav ul {
+  /*white- space nowrap mean no BR on the list they will be in one line*/
+  white-space: nowrap;
+
+  max-width: 1200px;
+
+  /*the margin top ang button is zero but in left right are automatic so it will arrages in middle*/
+  margin: 0 auto;
+}
+
+/*using display inline-block can display the List item to set next each other*/
+nav li {
+  width: 25%;
+  display: inline-block;
+  font-size: 25px;
+  padding-left: 30px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #4b4b4b;
+}
+
+nav li a.Join {
+  color: #f63232;
+}
+
+main {
+  /*this means if the other screen device does not reach 1200px then it will show 100% of the screen but if it reach more tha 1200px then it only show 1200px of the screen*/
+  max-width: 100%;
+  width: 1200px;
+
+  /*if the width 1200px for other screen device is more than 1200px then the margin left and right will auto in the middle*/
+  margin: 80px auto;
+  padding: 0 40px;
+
+  /*this maintain the padding 40px left and right even the screen become smaller and smaller cause without this border-box the text ay didikit sa gilid ng screen*/
+  box-sizing: border-box;
+}
+
+article h2 {
+  color: #f63232;
+  font-size: 48px;
+}
+article p {
+  line-height: 2em;
+  color: #4b4b4b;
+}
+
+.images {
+  text-align: center;
+  margin: 80px 0;
+  white-space: nowrap;
+}
+.images li {
+  /*Remember display inline-block mean they will dispaly next to each other, but use white-space to nowrap*/
+  display: inline-block;
+  width: 40%;
+  margin: 20px 5%;
+}
+
+.images li img {
+  /*this base on the width 40% on top script*/
+  max-width: 100%;
+}
+
+section.join {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b4b4b;
+}
+
+section.join h2 {
+  font-size: 36px;
+}
+section.join p {
+  padding-top: 10px;
+}
+
+form input {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 28px;
+  border: 4px solid white;
+}
+
+footer {
+  background: #f63232;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/*pseudo classes*/
+nav li a:hover {
+  text-decoration: underline;
+}
+
+.images li:hover {
+  position: relative;
+  top: -4px;
+}
+
+form input:focus {
+  border: 4px dashed#4b4b4b;
+  outline: none;
+}
+
+form input:valid {
+  border: 4px solid #71d300;
+}
+
+/*you can select the childs using pseudo*/
+nav li:first-child {
+  border: 3px solid #f63232;
+}
+
+article p::first-line {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+section.join p::first-letter {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+p::selection {
+  background-color: #f63232;
+  color: white;
+}
+
+p::after {
+  content: "...";
+}
